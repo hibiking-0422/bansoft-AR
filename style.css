@@ -1,5 +1,6 @@
 body {
-    margin: 0px;
+    margin: 0;
+    padding:0;
     background-color: #ffffff;
     height: 100%;
 }
@@ -7,12 +8,12 @@ body {
 model-viewer {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
 }
 
-#custom-ar-button {
-    font-size: 24px;
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
+.custom-ar-button {
+    position:fixed;
+    width: 120px;
+    bottom: 14px;
+    right: 14px;  
 }

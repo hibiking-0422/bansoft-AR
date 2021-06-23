@@ -9,8 +9,6 @@
     </head>
     <body>
         <model-viewer 
-            class="QuickLook" 
-            id="model-preview" 
             loading="eager" 
             reveal="auto" 
             src="./models/chair.glb"
@@ -18,10 +16,11 @@
             ar-modes="webxr scene-viewer quick-look fallback" 
             auto-rotate 
             camera-controls 
-            ar-scale="fixed" 
-            environment-image="neutral" 
-            exposure="0.5">
-            <button id="custom-ar-button" slot="ar-button">Start AR</button>
+            exposure="1.0">
+            <button class="custom-ar-button" >Start AR</button>
+            <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+                👋 Activate AR
+            </button>
         </model-viewer>
     </body>
 </html>
