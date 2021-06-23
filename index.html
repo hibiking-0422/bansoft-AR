@@ -1,81 +1,27 @@
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
-
-
+        <!-- import model-viewer -->
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
         <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js" defer></script>
+        <!-- import css -->
         <link rel="stylesheet" type="text/css" href="./style.css">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.21/src/ua-parser.min.js"></script>
-
-        <style>model-viewer#model-preview {
-            --poster-color: transparent;
-            width: 100%;
-            }
-        </style>
     </head>
     <body>
-    <div id="loader">
-        <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-    </div>
-
-    <div class="model-div">
-        
-    <model-viewer 
-        class="ar-model product-model-viewer QuickLook" 
-        id="model-preview" 
-        loading="eager" 
-        reveal="auto" 
-        src="./models/chair.glb"
-        quick-look-browsers="safari chrome" 
-        alt="A AR model of the Test" 
-        autoplay ar-modes="webxr scene-viewer quick-look fallback" 
-        auto-rotate 
-        amera-controls 
-        ar-scale="fixed" 
-        environment-image="neutral" 
-        exposure="0.5">
-    </model-viewer>
-    <p class="ar-title">3Dビュー</p>
-
-    </div>
-    <script defer>
-            var url = new URL(window.location.href);
-            {
-                let parser = new UAParser();
-                const parse_result = parser.getResult();
-
-                const user_agent = parser.getUA();
-                const ipad_flag =
-                    navigator.platform == "iPad" ||
-                    (navigator.platform == "MacIntel" &&
-                    navigator.userAgent.indexOf("Safari") != -1 &&
-                    navigator.standalone !== undefined);
-
-                const browser_name = parser.getBrowser().name;
-                const os_name = parser.getOS().name;
-                const os_compatible_flag = (os_name === "iOS")
-                    || os_name === "Android";
-                const browser_compatible_flag = browser_name.includes("Safari")  || browser_name.includes("Chrome");
-            }
-
-            window.onload = () => {
-                    document.querySelector('#model-preview').addEventListener('load', (event) => {
-                    const loader = document.getElementById('loader');
-                    loader.classList.add('loaded');
-                });
-                window.setTimeout(() => {
-                    const loader = document.getElementById('loader');
-                    loader.classList.add('loaded');
-                }, 5000);
-            }
-        </script>
+        <model-viewer 
+            class="QuickLook" 
+            id="model-preview" 
+            loading="eager" 
+            reveal="auto" 
+            src="./models/chair.glb"
+            quick-look-browsers="safari chrome" 
+            ar-modes="webxr scene-viewer quick-look fallback" 
+            auto-rotate 
+            camera-controls 
+            ar-scale="fixed" 
+            environment-image="neutral" 
+            exposure="0.5">
+            <button id="custom-ar-button" slot="ar-button">Start AR</button>
+        </model-viewer>
     </body>
 </html>
