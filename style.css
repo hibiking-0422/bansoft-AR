@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding:0;
-    background-color: #ffffff;
     height: 100%;
 }
 
@@ -13,7 +12,18 @@ model-viewer {
 
 .custom-ar-button {
     position:fixed;
-    width: 120px;
-    bottom: 14px;
-    right: 14px;  
+    font-size: 60px;
+    width: 500px;
+    height: 150px;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #59b1eb;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.custom-ar-button:hover {
+    background-color: darkgray;
 }

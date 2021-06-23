@@ -12,15 +12,13 @@
             loading="eager" 
             reveal="auto" 
             src="./models/chair.glb"
+            ios-src="./models/chair.usdz"
             quick-look-browsers="safari chrome" 
-            ar-modes="webxr scene-viewer quick-look fallback" 
-            auto-rotate 
+            auto-rotate
+            ar
             camera-controls 
             exposure="1.0">
-            <button class="custom-ar-button" >Start AR</button>
-            <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-                👋 Activate AR
-            </button>
+            <button class="custom-ar-button" slot="ar-button">Start AR</button>
         </model-viewer>
     </body>
 </html>
